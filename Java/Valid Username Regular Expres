@@ -1,0 +1,36 @@
+import java.util.Scanner;
+class UsernameValidator {
+    /*
+     * Write regular expression here.
+     */
+    public static final String regularExpression = "[a-zA-Z][a-zA-Z0-9_]{7,29}$";
+    /*if(regularExpression.length()<=30 && regularExpression.length()>8)
+    {
+        for(int a=0; a<regularExpression.length();a++){
+            int asc=(int)regularExpression.charAt(a);
+            int asc_zero=(int)regularExpression.charAt(0);
+            if((asc>=65 && asc<=90)||(asc>=97 && asc<=122)||(asc>=48 && asc<=57)||asc==95)
+                if((asc_zero>=65 && asc_zero<=97)||(asc_zero>=65 && asc_zero<=97))
+                    return true;
+            return false;
+        }
+    }*/
+}
+
+
+public class Solution {
+    private static final Scanner scan = new Scanner(System.in);
+    
+    public static void main(String[] args) {
+        int n = Integer.parseInt(scan.nextLine());
+        while (n-- != 0) {
+            String userName = scan.nextLine();
+
+            if (userName.matches(UsernameValidator.regularExpression)) {
+                System.out.println("Valid");
+            } else {
+                System.out.println("Invalid");
+            }           
+        }
+    }
+}
